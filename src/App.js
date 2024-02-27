@@ -2,6 +2,9 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom/cjs/rea
 import Navbar from './Navbar';
 import Home from './Home';
 import BirdList from './BirdList';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import BirdDetail from './BirdDetail';
+import NotFound from './NotFound';
 
 
 function App() {
@@ -17,12 +20,12 @@ function App() {
             <Route path='/birdList'>
                 <BirdList/>
             </Route>
-            {/* <Route path='/blogs/:id'>
-                <BlogDetails/>
+            <Route path='/birds/:id'>
+                <BirdDetail/>
             </Route>
             <Route path='*'>
                 <NotFound/>
-            </Route> */}
+            </Route>
         </Switch>
       </div>
   </div>

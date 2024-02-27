@@ -14,27 +14,29 @@ code {
 /* base styles */
 * {
   margin: 10px;
+  background-color: black;
+  color: white;
   /* font-family: "Quicksand";
   color: #333; */
 
 }
 /* navigation bar */
-.navbar {
+/* .navbar {
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 600px;
   margin: 0 auto;
-}
+} */
 
 .navbar a {
-  margin-left: 16px;
+
   text-decoration: none;
-  padding: 6px;
+  color: white;
 }
 .navbar a:hover {
-  color: #f1356d;
+  color: aqua;
 }
 
 /* .content {
@@ -43,12 +45,34 @@ code {
   padding: 20px;
 } */
 
-.card{
-  box-shadow: 5px 5px 5px 5px #888888;
-  padding: 5px;
+.contact-card,.bird-info{
+  box-shadow: 1px 1px 1px 1px #888888;
+  padding: 30px;
   border-radius: 10px;
-  /* background-color: black; */
+  /* background-color: rgb(149, 177, 177); */
+
 }
-p,span{
-  color: white;
+
+.bird-list a,.card-body a{
+    text-decoration: none;
+    color: white;
 }
+/* blog details page */
+.description {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  .bird-details div {
+    margin: 20px 0;
+  }
+  .bird-details button {
+    background: #0cac21;
+    color: #fff;
+    border: 0;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
