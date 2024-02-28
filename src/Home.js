@@ -73,7 +73,7 @@ const Home = () => {
       </div>
 
       <div className="row mt-5">
-        <div className="col-md-8 d-flex justify-content-between">
+        <div className="col-md-8 d-flex justify-content-around">
             <div className="col-lg-2 col-md-5 col-sm-4 bird-info">
               <label>၈၆၀၀</label>
               <p>ငှက်အမျိုးပေါင်း၊ မျိုးစိတ်ပေါင်း</p>
