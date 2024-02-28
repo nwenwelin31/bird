@@ -1,32 +1,30 @@
-import React from 'react'
-import useFetch from './useFetch';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import React from "react";
+import useFetch from "./useFetch";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 
 const BirdList = () => {
-    const {data:birds} = useFetch('http://localhost:8000/Tbl_Bird');
+  const { data: birds } = useFetch("http://localhost:8000/Tbl_Bird");
 
-    if (birds === null) {
-        return <div>Loading...</div>;
+  if (birds === null) {
+    return <div>Loading...</div>;
+  }
+
+  // Split the birds array into chunks of 4
+  const chunkedBirds = birds.reduce((acc, bird, index) => {
+    const chunkIndex = Math.floor(index / 4);
+
+    if (!acc[chunkIndex]) {
+      acc[chunkIndex] = [];
     }
 
-       // Split the birds array into chunks of 4
-       const chunkedBirds  = birds.reduce((acc, bird, index) => {
-        const chunkIndex = Math.floor(index / 4);
+    acc[chunkIndex].push(bird);
+    return acc;
+  }, []);
 
-        if (!acc[chunkIndex]) {
-            acc[chunkIndex] = [];
-        }
-
-        acc[chunkIndex].push(bird);
-        return acc;
-    }, []);
-
-    const handleBirdCard = () => {
-
-    }
+  const handleBirdCard = () => {};
   return (
-    <div className='bird-list'>
+    <div className="col-lg-12 mt-5 pt-5">
       <h1>All birds</h1>
       {/* {birds.map(bird => (
         <div class="card" style={{width: '15rem'}}>
@@ -38,31 +36,44 @@ const BirdList = () => {
         </div>
         ))} */}
 
-        {chunkedBirds.map((row, rowIndex) => (
-                <div className='row' key={rowIndex}>
-                    {row.map(bird => (
-                        <div className='col' key={bird.id} onChange={handleBirdCard}>
-                            <Link to={`/birds/${bird.id}`}>
-                                <div className='' style={{ width: '20rem' }}>
-                                    <img className='card-img-top' src={`${process.env.PUBLIC_URL}/${bird.ImagePath}`} alt='bird' style={{ width: 300, height: 200 }} />
-                                    <div className='card-body d-flex justify-content-between'>
-                                        <div>
-                                            <h5 className='card-title'>{bird.BirdEnglishName}</h5>
-                                            <h5 className='card-title'>{bird.BirdMyanmarName}</h5>
-                                        </div>
-                                        <div>
-                                            <FaArrowRightFromBracket size={20}/>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </Link>
+      {chunkedBirds.map((row, rowIndex) => (
+        <div className="row mb-5">
+          <div className="col-lg-12">
+            <div className="row" key={rowIndex}>
+              {row.map((bird) => (
+                <div
+                  className="col-lg-3 col-md-5 col-sm-7 bird-list"
+                  key={bird.id}
+                  onChange={handleBirdCard}
+                >
+                  <Link to={`/birds/${bird.id}`}>
+                    <div>
+                      <div>
+                        <img
+                          className="img-fluid"
+                          src={`${process.env.PUBLIC_URL}/${bird.ImagePath}`}
+                          alt="bird"
+                        />
+                      </div>
+                      <div className="d-flex justify-content-between mt-1">
+                        <div>
+                          <h6 className="">{bird.BirdEnglishName}</h6>
+                          <h6 className="">{bird.BirdMyanmarName}</h6>
                         </div>
-                    ))}
+                        <div>
+                            <FaArrowRightFromBracket size={20}/>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
-            ))}
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default BirdList
+export default BirdList;

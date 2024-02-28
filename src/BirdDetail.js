@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link, useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import useFetch from './useFetch';
 
 const BirdDetail = () => {
@@ -24,9 +24,11 @@ const BirdDetail = () => {
             <div className='row'>
                 <div className='col-md-7'>
                 <article>
-                    <h1>{bird.BirdEnglishName}</h1>
-                    <h1>{bird.BirdMyanmarName}</h1>
+                    <h2>{bird.BirdEnglishName}</h2>
+                    <h2>{bird.BirdMyanmarName}</h2>
                     <div className='description m-3'>{bird.Description}</div>
+                  
+                    <Link to='/birdlist' className='btn btn-success mx-2'>Back</Link>
                     <button onClick={handleClick}>Delete</button>
                 </article>
                 </div>

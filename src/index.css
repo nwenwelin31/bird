@@ -1,54 +1,31 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-/* base styles */
-* {
-  margin: 10px;
+#root {
+  padding: 0px 15px 10px 10px;
   background-color: black;
   color: white;
   /* font-family: "Quicksand";
   color: #333; */
 
 }
-/* navigation bar */
-/* .navbar {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 600px;
-  margin: 0 auto;
-} */
 
 .navbar a {
 
   text-decoration: none;
   color: white;
+  margin: 10px;
 }
 .navbar a:hover {
   color: aqua;
 }
-
-/* .content {
-  max-width: 600px;
-  margin: 10px auto;
-  padding: 20px;
-} */
-
-.contact-card,.bird-info{
+.home,.bird-details{
+  padding-top: 12%;
+}
+.contact-card{
   box-shadow: 1px 1px 1px 1px #888888;
-  padding: 30px;
-  border-radius: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  height: 150px;
+  margin-left: 40px;
   /* background-color: rgb(149, 177, 177); */
 
 }
@@ -61,7 +38,7 @@ code {
 .description {
     padding-top: 30px;
     padding-bottom: 30px;
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 10px;
   }
   .bird-details div {
@@ -76,3 +53,25 @@ code {
     cursor: pointer;
   }
 
+  .bird-info{
+  box-shadow: 1px 1px 1px 1px #888888;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+.bird-info label{
+  font-size: x-large;
+
+}
+.bird-info p{
+  padding-top: 20px;
+  font-size: small;
+  
+}
+.bird-list,.home-img-text{
+  box-shadow: 1px 1px 1px 1px #888888;
+  padding: 2px;
+  border-radius: 10px;
+}
