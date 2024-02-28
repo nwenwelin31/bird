@@ -22,7 +22,6 @@ const BirdList = () => {
     return acc;
   }, []);
 
-  const handleBirdCard = () => {};
   return (
     <div className="col-lg-12 mt-5 pt-5">
       <h1>All birds</h1>
@@ -37,37 +36,36 @@ const BirdList = () => {
         ))} */}
 
       {chunkedBirds.map((row, rowIndex) => (
-        <div className="row mb-5">
+        <div className="row mb-5" key={rowIndex}>
           <div className="col-lg-12">
-            <div className="row" key={rowIndex}>
-              {row.map((bird) => (
-                <div
-                  className="col-lg-3 col-md-5 col-sm-7 bird-list"
-                  key={bird.id}
-                  onChange={handleBirdCard}
-                >
-                  <Link to={`/birds/${bird.id}`}>
-                    <div>
-                      <div>
-                        <img
-                          className="img-fluid"
-                          src={`${process.env.PUBLIC_URL}/${bird.ImagePath}`}
-                          alt="bird"
-                        />
-                      </div>
-                      <div className="d-flex justify-content-between mt-1">
-                        <div>
-                          <h6 className="">{bird.BirdEnglishName}</h6>
-                          <h6 className="">{bird.BirdMyanmarName}</h6>
-                        </div>
-                        <div>
-                            <FaArrowRightFromBracket size={20}/>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
+            <div className="row">
+            {row.map((bird) => (
+          <div
+            className="col-lg-3 col-md-5 col-sm-7 bird-list"
+            key={bird.id} // Add key prop here using bird.id
+          >
+            <Link to={`/birds/${bird.id}`}>
+              <div>
+                <div>
+                  <img
+                    className="img-fluid"
+                    src={`${process.env.PUBLIC_URL}/${bird.ImagePath}`}
+                    alt="bird"
+                  />
                 </div>
-              ))}
+                <div className="d-flex justify-content-between mt-1">
+                  <div>
+                    <h6 className="">{bird.BirdEnglishName}</h6>
+                    <h6 className="">{bird.BirdMyanmarName}</h6>
+                  </div>
+                  <div>
+                    <FaArrowRightFromBracket size={20} />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        ))}
             </div>
           </div>
         </div>
