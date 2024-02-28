@@ -4,7 +4,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 
 const BirdList = () => {
-  const { data: birds } = useFetch("http://localhost:8000/Tbl_Bird");
+  const { data: birds } = useFetch("https://json-server-vercel-bird.vercel.app/Tbl_Bird");
 
   if (birds === null) {
     return <div>Loading...</div>;

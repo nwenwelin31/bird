@@ -5,11 +5,11 @@ import useFetch from './useFetch';
 const BirdDetail = () => {
     const {id} = useParams();
     //http://localhost:8000/blogs/
-    const {data:bird, error, isPending} = useFetch('http://localhost:8000/Tbl_Bird/'+id);
+    const {data:bird, error, isPending} = useFetch('https://json-server-vercel-bird.vercel.app/Tbl_Bird/'+id);
     const history = useHistory();
 
     const handleClick = () => {
-        fetch('http://localhost:8000/Tbl_Bird/'+bird.id,{
+        fetch('https://json-server-vercel-bird.vercel.app/Tbl_Bird/'+bird.id,{
             method: 'DELETE',
         }).then(() => {
             history.push('/');
