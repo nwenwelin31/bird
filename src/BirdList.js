@@ -4,7 +4,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 
 const BirdList = () => {
-  const { data: birds } = useFetch("https://json-server-vercel-bird.vercel.app/Tbl_Bird");
+  //fetch api data
+  const { data: birds } = useFetch("https://json-server-snowy-pi.vercel.app/Birds");
 
   if (birds === null) {
     return <div>Loading...</div>;
@@ -38,6 +39,7 @@ const BirdList = () => {
       {chunkedBirds.map((row, rowIndex) => (
         <div className="row mb-5" key={rowIndex}>
           <div className="col-lg-12">
+          {/* show bird 4 card */}
             <div className="row">
             {row.map((bird) => (
           <div

@@ -85,3 +85,16 @@
   height: 100%; /* Make the image fill its container */
   object-fit: cover; /* Cover the entire container while maintaining aspect ratio */
 }
+.moving-text-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.moving-text {
+  animation: moveRightToLeft 15s linear infinite; /* Adjust duration and timing function as needed */
+}
+/* for color brightness */
+.textlight{
+  filter: brightness(80%);
+  color: white;
+}

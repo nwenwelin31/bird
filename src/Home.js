@@ -32,8 +32,8 @@ const Home = () => {
           </div>
         </div>
         <div className="col-md-5 col-sm-10 mx-4 mt-4">
-          <div className="row">
-            <p className="btn btn-secondary">
+          <div className="row  moving-text-container" data-aos="zoom-in">
+            <p className="btn btn-secondary moving-text textlight" style={{ whiteSpace: 'nowrap' }}>
               ငှက်တစ်မျိုးသည် ယင်းတို့ပေါက်ပွားရာ ဆိုက်ဗီးရီးယားဒေသများမှ
               မိုင်ပေါင်း ၄,ဝဝဝ ခန့်ကွာဝေးသည့် အင်ဒိုချိုင်းနားကျွန်းဆွယ်
               တိုင်းပြည်များ
