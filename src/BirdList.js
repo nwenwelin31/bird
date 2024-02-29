@@ -46,7 +46,7 @@ const BirdList = () => {
           >
             <Link to={`/birds/${bird.id}`}>
               <div>
-                <div>
+                <div className="image-container">
                   <img
                     className="img-fluid"
                     src={`${process.env.PUBLIC_URL}/${bird.ImagePath}`}
