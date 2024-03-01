@@ -40,7 +40,7 @@ const BirdDetail = () => {
               <Link to="/birdlist" className="btn btn-success mx-2">
                 Back
               </Link>
-              <button onClick={handleClick}>Delete</button>
+              {/* <button onClick={handleClick}>Delete</button> */}
             </article>
           </div>
           <div className="col-md-5">
